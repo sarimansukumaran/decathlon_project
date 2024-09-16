@@ -7,4 +7,7 @@ class ColorConstants {
   static const Color MAIN_WHITE = Color.fromRGBO(255, 255, 255, 1);
   static const Color GREY = Colors.grey;
   static const Color LIGHT_BLUE = Color.fromARGB(255, 182, 183, 240);
+  static const Color green_bg = Color.fromARGB(255, 14, 255, 123);
+  static const Color BASIC_YELLOW = Color.fromARGB(255, 253, 211, 21);
+  static const Color TRASPARENT = Colors.transparent;
 }

@@ -1,8 +1,11 @@
 import 'package:decathlon/dummy_db.dart';
 import 'package:decathlon/global_widgets/categoryCard.dart';
 import 'package:decathlon/global_widgets/imageTextCard.dart';
+import 'package:decathlon/global_widgets/mainItemContainerCard.dart';
 import 'package:decathlon/utils/constants/color_constants.dart';
+import 'package:decathlon/utils/constants/image_constants.dart';
 import 'package:decathlon/view/home_screen/widgets/mainCategoryCard.dart';
+import 'package:decathlon/view/home_screen/widgets/trianglePainter.dart';
 import 'package:flutter/material.dart';
 
 String pincode = "605006";
@@ -31,60 +34,240 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 10,
                 ),
                 MainCategoryCard(),
-                SizedBox(
-                  height: 10,
-                ),
                 _buildIconWithTextSection(),
-                SizedBox(
-                  height: 10,
-                ),
                 _buildImageTextSectionOne(),
                 SizedBox(
                   height: 10,
                 ),
                 _buildImageTextSectionTwo(),
-                SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  height: 18,
-                  width: screenWidth,
-                  decoration: BoxDecoration(
-                    color: ColorConstants.MAIN_BLACK,
-                  ),
-                  child: Row(
-                    children: [
-                      Text(
-                        "CRED",
-                        style: TextStyle(
-                            color: ColorConstants.MAIN_WHITE,
-                            fontSize: 10,
-                            fontWeight: FontWeight.w600),
-                      ),
-                      Text(
-                        "|",
-                        style: TextStyle(
-                            color: ColorConstants.MAIN_WHITE,
-                            fontSize: 10,
-                            fontWeight: FontWeight.w300),
-                      ),
-                      RichText(
-                          text: TextSpan(
-                        text: "Get cashback up to ",
-                        style: TextStyle(
-                            color: ColorConstants.MAIN_WHITE,
-                            fontSize: 8,
-                            fontWeight: FontWeight.w300),
-                      ))
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
+                _buildCredAdSection(screenWidth),
+                _buildStackAdSection(),
+                _buildRecommedForYouSection(screenWidth),
               ],
             ),
           )),
+    );
+  }
+
+  Column _buildRecommedForYouSection(double screenWidth) {
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+          child: Align(
+            alignment: Alignment.topLeft,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("RECOMMENED"),
+                Text("FOR YOU"),
+                Container(
+                    height: 10,
+                    width: 50,
+                    child: CustomPaint(
+                      painter: TrianglePainter(),
+                    )),
+              ],
+            ),
+          ),
+        ),
+        GridView.builder(
+            shrinkWrap: true,
+            itemCount: 4,
+            physics: NeverScrollableScrollPhysics(),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, childAspectRatio: 2 / 3),
+            itemBuilder: (context, index) => MainItemContainerCard(
+                itemimage: DummyDb.mainItemContainerList[index]["image"],
+                itemRating: DummyDb.mainItemContainerList[index]["rating"],
+                itemname: DummyDb.mainItemContainerList[index]["name"],
+                itemDetail: DummyDb.mainItemContainerList[index]["details"],
+                itemPrice: DummyDb.mainItemContainerList[index]["price"],
+                yellowBoxText: DummyDb.mainItemContainerList[index]
+                    ["yellowBox"])),
+        Container(
+            margin: EdgeInsets.symmetric(
+              horizontal: 5,
+              vertical: 10,
+            ),
+            padding: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+            height: 40,
+            width: screenWidth,
+            color: ColorConstants.LIGHT_BLUE,
+            child: Center(
+              child: Text(
+                "View All",
+                style: TextStyle(
+                    color: ColorConstants.PRIMARY_COLOR,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14),
+              ),
+            ))
+      ],
+    );
+  }
+
+  Padding _buildStackAdSection() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+      child: Stack(
+        children: [
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+            height: 180,
+          ),
+          Positioned(
+              left: 0,
+              right: 0,
+              bottom: 10,
+              child: Container(
+                color: ColorConstants.green_bg,
+                height: 90,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 3),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Online\nExclusive",
+                        style: TextStyle(
+                          color: ColorConstants.PRIMARY_COLOR,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        "800+ Products Only\nAvailable Online",
+                        style: TextStyle(
+                          color: ColorConstants.PRIMARY_COLOR,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 9,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                ),
+              )),
+          Positioned(
+              bottom: 10,
+              top: 0,
+              left: 170,
+              child: Container(
+                width: 180,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: ImageConstants.cyclingGirl, fit: BoxFit.cover)),
+              )),
+          Positioned(
+              bottom: 0,
+              left: 100,
+              child: Container(
+                width: 120,
+                height: 120,
+                decoration: BoxDecoration(
+                    border: Border(
+                        top: BorderSide(
+                            width: 4, color: ColorConstants.MAIN_WHITE),
+                        right: BorderSide(
+                            width: 4, color: ColorConstants.MAIN_WHITE)),
+                    image: DecorationImage(
+                        image: ImageConstants.disabledManShoes,
+                        fit: BoxFit.cover)),
+              )),
+          Positioned(
+              right: 4,
+              top: 110,
+              child: CircleAvatar(
+                radius: 10,
+                backgroundColor: Colors.white,
+                child: Icon(
+                  Icons.arrow_forward,
+                  color: ColorConstants.PRIMARY_COLOR,
+                  size: 14,
+                ),
+              ))
+        ],
+      ),
+    );
+  }
+
+  Container _buildCredAdSection(double screenWidth) {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 2),
+      height: 20,
+      width: 400,
+      decoration: BoxDecoration(
+        color: Colors.black,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 3),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              "CRED",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 8,
+                  fontWeight: FontWeight.w600),
+            ),
+            Text(
+              "|",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 8,
+                  fontWeight: FontWeight.w300),
+            ),
+            RichText(
+                text: TextSpan(children: [
+              TextSpan(
+                text: "Get cashback up to ",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 8,
+                    fontWeight: FontWeight.w300),
+              ),
+              TextSpan(
+                text: "₹500 ",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 8,
+                    fontWeight: FontWeight.w600),
+              ),
+              TextSpan(
+                text: "with ",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 8,
+                    fontWeight: FontWeight.w300),
+              ),
+              TextSpan(
+                text: "CRED UPI ",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 8,
+                    fontWeight: FontWeight.w600),
+              ),
+              TextSpan(
+                text: "for a min oder value of ₹199 ",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 8,
+                    fontWeight: FontWeight.w300),
+              ),
+            ])),
+            Text(
+              "*T&C apply",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 8,
+                  fontWeight: FontWeight.w300),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
@@ -124,66 +307,69 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Row _buildIconWithTextSection() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        Row(
-          children: [
-            CircleAvatar(
-              radius: 10,
-              backgroundColor: ColorConstants.LIGHT_BLUE.withOpacity(.5),
-              child: Icon(
-                Icons.assignment_returned_outlined,
-                color: ColorConstants.PRIMARY_COLOR,
-                size: 17,
+  Padding _buildIconWithTextSection() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Row(
+            children: [
+              CircleAvatar(
+                radius: 10,
+                backgroundColor: ColorConstants.LIGHT_BLUE.withOpacity(.5),
+                child: Icon(
+                  Icons.assignment_returned_outlined,
+                  color: ColorConstants.PRIMARY_COLOR,
+                  size: 17,
+                ),
               ),
-            ),
-            Text(
-              "Easy Return",
-              style: TextStyle(fontSize: 10),
-            )
-          ],
-        ),
-        Text(
-          "|",
-        ),
-        Row(
-          children: [
-            CircleAvatar(
-              radius: 10,
-              backgroundColor: ColorConstants.LIGHT_BLUE.withOpacity(.5),
-              child: Icon(
-                Icons.local_shipping_outlined,
-                color: ColorConstants.PRIMARY_COLOR,
-                size: 17,
+              Text(
+                "Easy Return",
+                style: TextStyle(fontSize: 10),
+              )
+            ],
+          ),
+          Text(
+            "|",
+          ),
+          Row(
+            children: [
+              CircleAvatar(
+                radius: 10,
+                backgroundColor: ColorConstants.LIGHT_BLUE.withOpacity(.5),
+                child: Icon(
+                  Icons.local_shipping_outlined,
+                  color: ColorConstants.PRIMARY_COLOR,
+                  size: 17,
+                ),
               ),
-            ),
-            Text(
-              "Free Delivery Above ₹2999*",
-              style: TextStyle(fontSize: 10),
-            )
-          ],
-        ),
-        Text("|"),
-        Row(
-          children: [
-            CircleAvatar(
-              radius: 10,
-              backgroundColor: ColorConstants.LIGHT_BLUE.withOpacity(.5),
-              child: Icon(
-                Icons.credit_card_rounded,
-                color: ColorConstants.PRIMARY_COLOR,
-                size: 17,
+              Text(
+                "Free Delivery Above ₹2999*",
+                style: TextStyle(fontSize: 10),
+              )
+            ],
+          ),
+          Text("|"),
+          Row(
+            children: [
+              CircleAvatar(
+                radius: 10,
+                backgroundColor: ColorConstants.LIGHT_BLUE.withOpacity(.5),
+                child: Icon(
+                  Icons.credit_card_rounded,
+                  color: ColorConstants.PRIMARY_COLOR,
+                  size: 17,
+                ),
               ),
-            ),
-            Text(
-              "Secure Payment",
-              style: TextStyle(fontSize: 10),
-            )
-          ],
-        ),
-      ],
+              Text(
+                "Secure Payment",
+                style: TextStyle(fontSize: 10),
+              )
+            ],
+          ),
+        ],
+      ),
     );
   }
 
@@ -225,9 +411,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: NetworkImage(
-                              "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Decathlon_Logo24.svg/2560px-Decathlon_Logo24.svg.png"),
-                          fit: BoxFit.fill)),
+                          image: ImageConstants.mainLogo, fit: BoxFit.fill)),
                 ),
                 Row(
                   children: [

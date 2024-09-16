@@ -1,3 +1,5 @@
+import 'package:decathlon/utils/constants/image_constants.dart';
+
 class DummyDb {
   static List homeFirstCategory = [
     {"image": "assets/image/men.jpg", "catogoryName": "Men"},
@@ -127,6 +129,46 @@ class DummyDb {
       "image":
           "https://images.pexels.com/photos/18511482/pexels-photo-18511482/free-photo-of-ping-pong-ball-and-rackets.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "textData": "Table Tennis"
+    },
+  ];
+  static const List mainItemContainerList = [
+    {
+      "yellowBox": "Lowest price best value",
+      "image":
+          "https://contents.mediadecathlon.com/p1724744/a8373278310c30c7ce0af8f5b36843c1/p1724744.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.7 | 3.9k",
+      "name": "DOMYOS",
+      "details":
+          "Strechable Quick Dry,Zip Pocket,Convetible Jog FIt-Mens Gym TrackPant black",
+      "price": "₹999"
+    },
+    {
+      "yellowBox": "Clearence",
+      "image":
+          "https://contents.mediadecathlon.com/p2567719/2aca3f4099688aac3c2f973757bc2ab1/p2567719.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.0 | 3.9k",
+      "name": "DOMYOS",
+      "details": "Men's Tshirt Regular Fit For Light Activity-Black",
+      "price": "₹199"
+    },
+    {
+      "yellowBox": "Price Drop",
+      "image":
+          "https://contents.mediadecathlon.com/p2754682/3b1e70ded996629dabc18ac4e32a664b/p2754682.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.4 | 72",
+      "name": "KIMJALY",
+      "details":
+          "Yoga Mat, 4 mm thick, 172 x 58 cm, Foam - Blue, Lightweight, For Soft Yoga",
+      "price": "₹399"
+    },
+    {
+      "yellowBox": "Top Rated",
+      "image":
+          "https://contents.mediadecathlon.com/p2273755/fbfd2f6805de6c0a5bcfee979eaf1827/p2273755.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.7 | 2.9k",
+      "name": "DOMYOS",
+      "details": "Men Sports Gym Shorts With Zip Pocket Black",
+      "price": "₹999"
     },
   ];
 }

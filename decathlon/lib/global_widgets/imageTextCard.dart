@@ -16,8 +16,8 @@ class ImageTextCard extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: 90,
-            width: 80,
+            height: 80,
+            width: 75,
             decoration: BoxDecoration(
                 image: DecorationImage(
                     image: NetworkImage(imageUrl), fit: BoxFit.cover)),
@@ -26,7 +26,7 @@ class ImageTextCard extends StatelessWidget {
             textData,
             style: TextStyle(
                 fontWeight: FontWeight.w600,
-                fontSize: 12,
+                fontSize: 10,
                 color: ColorConstants.MAIN_BLACK),
           ),
         ],
