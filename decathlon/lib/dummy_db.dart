@@ -171,4 +171,95 @@ class DummyDb {
       "price": "₹999"
     },
   ];
+  static const List outdoorSportsCategoryList = [
+    {
+      "image":
+          "https://images.pexels.com/photos/18331843/pexels-photo-18331843/free-photo-of-a-person-climbing-up-a-mountain-with-a-backpack.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "textData": "Hike &\nTrekking"
+    },
+    {
+      "image":
+          "https://images.pexels.com/photos/5589360/pexels-photo-5589360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "textData": "Camping"
+    },
+    {
+      "image":
+          "https://images.pexels.com/photos/27797908/pexels-photo-27797908/free-photo-of-a-woman-hiking-with-trek-poles-on-a-trail.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "textData": "Wildlife\nWatching"
+    },
+    {
+      "image":
+          "https://images.pexels.com/photos/848618/pexels-photo-848618.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "textData": "Skiing &\nSnowboarding"
+    },
+    {
+      "image":
+          "https://images.pexels.com/photos/3077882/pexels-photo-3077882.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "textData": "Climbing"
+    },
+    {
+      "image":
+          "https://images.pexels.com/photos/1143921/pexels-photo-1143921.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "textData": "Fishing"
+    },
+    {
+      "image":
+          "https://images.pexels.com/photos/1559388/pexels-photo-1559388.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "textData": "Horse\nRiding"
+    }
+  ];
+  static const List fitnessSportsYogaList = [
+    {
+      "image":
+          "https://images.pexels.com/photos/6389869/pexels-photo-6389869.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "textData": "Fitness\nCardio"
+    },
+    {
+      "image":
+          "https://images.pexels.com/photos/11191174/pexels-photo-11191174.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "textData": "Gym & Fitness"
+    },
+    {
+      "image":
+          "https://images.pexels.com/photos/460307/pexels-photo-460307.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "textData": "Yoga"
+    },
+    {
+      "image":
+          "https://images.pexels.com/photos/6572605/pexels-photo-6572605.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "textData": "Kids Sports\n & Gymnastic"
+    },
+    {
+      "image":
+          "https://images.pexels.com/photos/1544774/pexels-photo-1544774.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "textData": "Boxing &\nMartial Arts"
+    },
+  ];
+  static const List waterSportsList = [
+    {
+      "image":
+          "https://images.pexels.com/photos/1263348/pexels-photo-1263348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "textData": "Swimming"
+    },
+    {
+      "image":
+          "https://images.pexels.com/photos/1654489/pexels-photo-1654489.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "textData": "Surfing &\nBeach Sports"
+    },
+    {
+      "image":
+          "https://images.pexels.com/photos/1670468/pexels-photo-1670468.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "textData": "Snorkelling\n& Diving"
+    },
+    {
+      "image":
+          "https://images.pexels.com/photos/1522344/pexels-photo-1522344.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "textData": "Kayaking &\nStand Up Paddle"
+    },
+    {
+      "image":
+          "https://images.pexels.com/photos/144249/sailing-boat-sail-holiday-holidays-144249.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "textData": "Sailing"
+    }
+  ];
 }

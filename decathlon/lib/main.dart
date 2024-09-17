@@ -1,3 +1,4 @@
+import 'package:decathlon/view/categories/categories.dart';
 import 'package:decathlon/view/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: Categories(),
     );
   }
 }

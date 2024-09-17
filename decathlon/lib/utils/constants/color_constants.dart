@@ -10,4 +10,5 @@ class ColorConstants {
   static const Color green_bg = Color.fromARGB(255, 14, 255, 123);
   static const Color BASIC_YELLOW = Color.fromARGB(255, 253, 211, 21);
   static const Color TRASPARENT = Colors.transparent;
+  static const Color DARK_GREY = Color.fromARGB(255, 82, 82, 82);
 }
