@@ -1,6 +1,8 @@
 import 'package:decathlon/dummy_db.dart';
 import 'package:decathlon/utils/constants/color_constants.dart';
 import 'package:decathlon/view/categories/widgets/categoriesMainCard.dart';
+import 'package:decathlon/view/menCollectionCategory/menCollectionCategory.dart';
+import 'package:decathlon/view/womenCollectioncategory/womenCollectioncategory.dart';
 import 'package:flutter/material.dart';
 
 class Categories extends StatelessWidget {
@@ -23,7 +25,7 @@ class Categories extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _buildleftSideSection(),
+          _buildleftSideSection(context),
           SizedBox(
             width: 20,
           ),
@@ -184,7 +186,7 @@ class Categories extends StatelessWidget {
     );
   }
 
-  Container _buildleftSideSection() {
+  Container _buildleftSideSection(context) {
     return Container(
       width: 110,
       height: 410,
@@ -221,68 +223,85 @@ class Categories extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          Container(
-            height: 100,
-            width: 110,
-            decoration: BoxDecoration(
-              color: ColorConstants.LIGHT_BLUE,
-              border: Border(
-                  top: BorderSide(
-                      color: ColorConstants.PRIMARY_COLOR, width: 1)),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  height: 65,
-                  width: 65,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image:
-                            AssetImage(DummyDb.homeFirstCategory[0]["image"]),
-                        fit: BoxFit.cover),
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Mencollectioncategory()));
+            },
+            child: Container(
+              height: 100,
+              width: 110,
+              decoration: BoxDecoration(
+                color: ColorConstants.LIGHT_BLUE,
+                // border: Border(
+                //     top: BorderSide(
+                //         color: ColorConstants.PRIMARY_COLOR, width: 1)
+                //         ),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    height: 65,
+                    width: 65,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image:
+                              AssetImage(DummyDb.homeFirstCategory[0]["image"]),
+                          fit: BoxFit.cover),
+                    ),
                   ),
-                ),
-                Text(
-                  "Men Collection",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: ColorConstants.DARK_GREY,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w200),
-                ),
-              ],
+                  Text(
+                    "Men Collection",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: ColorConstants.DARK_GREY,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w200),
+                  ),
+                ],
+              ),
             ),
           ),
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 2),
-            height: 120,
-            width: 110,
-            decoration: BoxDecoration(
-              color: ColorConstants.LIGHT_BLUE,
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  height: 65,
-                  width: 65,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image:
-                            AssetImage(DummyDb.homeFirstCategory[1]["image"]),
-                        fit: BoxFit.cover),
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Womencollectioncategory()));
+            },
+            child: Container(
+              margin: EdgeInsets.symmetric(vertical: 2),
+              height: 120,
+              width: 110,
+              decoration: BoxDecoration(
+                color: ColorConstants.LIGHT_BLUE,
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    height: 65,
+                    width: 65,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image:
+                              AssetImage(DummyDb.homeFirstCategory[1]["image"]),
+                          fit: BoxFit.cover),
+                    ),
                   ),
-                ),
-                Text(
-                  "Women\nCollection",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: ColorConstants.DARK_GREY,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w200),
-                ),
-              ],
+                  Text(
+                    "Women\nCollection",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: ColorConstants.DARK_GREY,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w200),
+                  ),
+                ],
+              ),
             ),
           ),
           Container(

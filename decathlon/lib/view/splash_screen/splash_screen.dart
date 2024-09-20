@@ -13,7 +13,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     // TODO: implement initState
-    Future.delayed(Duration(seconds: 1)).then((value) {
+    Future.delayed(Duration(seconds: 3)).then((value) {
       Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (context) => BottomNavbarSection()));
     });

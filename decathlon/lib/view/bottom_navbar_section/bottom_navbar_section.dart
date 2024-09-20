@@ -1,4 +1,5 @@
 import 'package:decathlon/utils/constants/color_constants.dart';
+import 'package:decathlon/view/categories/categories.dart';
 import 'package:decathlon/view/home_screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,9 +13,7 @@ class BottomNavbarSection extends StatefulWidget {
 class _BottomNavbarSectionState extends State<BottomNavbarSection> {
   final List screens = [
     HomeScreen(),
-    Container(
-      color: Colors.amber,
-    ),
+    Categories(),
     Container(
       color: Colors.pink,
     ),
