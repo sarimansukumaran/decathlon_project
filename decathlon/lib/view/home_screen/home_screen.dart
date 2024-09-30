@@ -6,6 +6,7 @@ import 'package:decathlon/utils/constants/color_constants.dart';
 import 'package:decathlon/utils/constants/image_constants.dart';
 import 'package:decathlon/view/home_screen/widgets/mainCategoryCard.dart';
 import 'package:decathlon/view/home_screen/widgets/trianglePainter.dart';
+import 'package:decathlon/view/mensTopwear/mensTopwear.dart';
 import 'package:flutter/material.dart';
 
 String pincode = "605006";
@@ -387,6 +388,12 @@ class _HomeScreenState extends State<HomeScreen> {
             childAspectRatio: 3 / 5,
           ),
           itemBuilder: (context, index) => CategoryCard(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => DummyDb.listofpages[index]));
+              },
               cateImage: DummyDb.homeFirstCategory[index]["image"],
               cateName: DummyDb.homeFirstCategory[index]["catogoryName"])),
     );

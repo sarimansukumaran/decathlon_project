@@ -1,3 +1,8 @@
+import 'package:decathlon/view/account_screen/account_screen.dart';
+import 'package:decathlon/view/bottom_navbar_section/bottom_navbar_section.dart';
+import 'package:decathlon/view/categories/categories.dart';
+import 'package:decathlon/view/notification_screen/notificationScreen.dart';
+
 import 'package:decathlon/view/splash_screen/splash_screen.dart';
 
 import 'package:flutter/material.dart';

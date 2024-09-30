@@ -1,4 +1,8 @@
 import 'package:decathlon/utils/constants/image_constants.dart';
+import 'package:decathlon/view/mensTopwear/mensTopwear.dart';
+import 'package:decathlon/view/womenFootwear/WomenFootWear.dart';
+import 'package:decathlon/view/womenTopwear.dart/womenTopwear.dart';
+import 'package:flutter/material.dart';
 
 class DummyDb {
   static List homeFirstCategory = [
@@ -592,5 +596,302 @@ class DummyDb {
           "https://contents.mediadecathlon.com/p2687956/5597c9f319976b47f710fdfbdd1a05f3/p2687956.jpg?format=auto&quality=70&f=425x0",
       "textData": "Women\nPadded Jackets"
     },
+  ];
+  static const List menTopwearDetailedList = [
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2567719/2aca3f4099688aac3c2f973757bc2ab1/p2567719.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.0 | 3.9k",
+      "name": "DOMYOS",
+      "details": "Men's Tshirt Regular Fit For Light Activity-Black",
+      "price": "₹199"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p1800679/3137826db9d255d6f1fa792c432a2818/p1800679.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.7 | 4.9k",
+      "name": "QUECHUA",
+      "details": "Men Dry Fit Activewear T-Shirt Blue - MH500",
+      "price": "₹699"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2437392/989571bc690ccca2d1b51217e0bb7deb/p2437392.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.6 | 2,7k",
+      "name": "FORCLAZ",
+      "details":
+          "Men Checked Full Sleeve Light Flannel Shirt Brown - Travel 500",
+      "price": "₹1499"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2146638/811046489b5fbf9f07d1775ca2c4f27d/p2146638.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.7 | 5.9k",
+      "name": "TRIBORD",
+      "details": "Men Waterproof Sailing Jacket 100 Petrol White",
+      "price": "₹1999"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2345487/cdb7aba1d4386df7a0b70adcdece516a/p2345487.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.6 | 1.9k",
+      "name": "TARMAK",
+      "details": "Men Sleeveless Basketball Jersey T100 Black",
+      "price": "₹299"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2532216/0b29e92c1cc08d8cbbd6aaf62a1f081c/p2532216.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.7 | 104",
+      "name": "WEDZE",
+      "details": "MEN’S WARM PADDED SKI JACKET 900 WARM - BLUE",
+      "price": "₹19,999"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2249839/bf3be5613061334f290df8883a3cfbe9/p2249839.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.5 | 673",
+      "name": "SOLOGNAC",
+      "details": "Rain Waterproof Lightweight Jacket 100- Camo Green",
+      "price": "₹1299"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2433320/1f268a2277135265c8cd192538b9fee1/p2433320.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.4 | 475",
+      "name": "INESIS",
+      "details":
+          "Men's golf 100% cotton short-sleeved polo shirt - MW100 White",
+      "price": "₹499"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2682517/005644ef3e018467dba108c1b5ffa375/p2682517.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.7 | 554",
+      "name": "OLAIAN",
+      "details": "Men's surfing UV protection top BRUSH BLK",
+      "price": "₹1199"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2521487/3eff2821ce6db7625d6612aeb2c0f369/p2521487.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.7 | 6.4k",
+      "name": "QUECHUA",
+      "details": "Men’s hiking waterproof winter jacket - SH500 -10°C",
+      "price": "₹3299"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p1714170/54ddd64d388c9201f54b4c5a7d2ca672/p1714170.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.5 | 7.4k",
+      "name": "QUECHUA",
+      "details": "Men Sweater Round Neck Fleece for Hiking MH20 Black",
+      "price": "₹299"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2621717/9187b790d490d3466331da32f7e6a4ca/p2621717.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.5 | 3.5k",
+      "name": "KIPSTA",
+      "details": "Men Football Jersey shirt F100 - Black",
+      "price": "₹349"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2256020/2b3ec8321073f5887299808421c2ebf2/p2256020.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.6 | 294",
+      "name": "KIPSTA",
+      "details": "Football Jacket Training Essential - Black/Grey",
+      "price": "₹999"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2595030/1882c738e82b914f07f52b41034308ce/p2595030.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.5 | 775",
+      "name": "DOMYOS",
+      "details":
+          "Men Sweatshirt With Hood and Zip Fleece Lined 500 For Gym-Mahogany Brown",
+      "price": "₹499"
+    },
+  ];
+  static const List menBottomwearDetailedList = [
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2043061/9bf1f4d36b1d1fe5f00747b56898a3ef/p2043061.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.5 | 5.4k",
+      "name": "KALENJI",
+      "details": "Men Running Shorts Run Dry+ - Black",
+      "price": "₹599"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p1976638/948527473ee778eb476eeadc83dec1f8/p1976638.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.4 | 3.4k",
+      "name": "KALENJI",
+      "details":
+          "Quick Dry, 3 Pocket, Jog Fit-Mens Running Trackpant Dark Blue",
+      "price": "₹999"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2600577/dd5af38cad41b69d61cda655e3ffca88/p2600577.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.7 | 226",
+      "name": "KALENJI",
+      "details": "Men's Running Tight Shorts - Kiprun Run 100 Black",
+      "price": "₹699"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2584885/f6a38bfdadc7827bc3fc2eb6fa51ddb9/p2584885.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.7 | 2.9k",
+      "name": "SOLOGNAC",
+      "details":
+          "Men Breathable Lightweight Cargo Trousers Pants SG-500 - Grey",
+      "price": "₹1999"
+    },
+  ];
+  static const List womenTopwearDetailedList = [
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2630539/01f4163f037167dddb1f87a32b41d3b5/p2630539.jpg?format=auto&quality=70&f=425x0",
+      "rating": "5 | 4",
+      "name": "DOMYOS",
+      "details": "FTA 120 - Multicolour Crop",
+      "price": "₹599"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2643734/bb5d0374aa93d70d85966bafc690f841/p2643734.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.7 | 6.4k",
+      "name": "QUECHUA",
+      "details": "Women Sleeveless Tank Top Cherry Purple - NH500",
+      "price": "₹399"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2510448/18ef3cf62bdee1768f721c9a67fb5904/p2510448.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.8 | 64",
+      "name": "DOMYOS",
+      "details": "Women Gym Jacket Hooded - Black",
+      "price": "₹2999"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2456103/dd935f80e16070be3e8f31acc077f429/p2456103.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.7 | 144",
+      "name": "DOMYOS",
+      "details": "Women's Sweater Cropped Drawstring 520 For Gym-Purple",
+      "price": "₹499"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2673143/8ca84fbe34729f9f8e735d1736b579e6/p2673143.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.6 | 649",
+      "name": "DOMYOS",
+      "details": "Regular-Fit T-Shirt 100",
+      "price": "₹199"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p1975377/210a1e8a8a1593d68c5ab155bbd454fe/p1975377.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.7 | 2.1k",
+      "name": "KALENJI",
+      "details": "Women Long-Sleeved Running T-Shirt Sun Protect - Black",
+      "price": "₹699"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2690345/42c6df9c5ceb582e4254129498ed719a/p2690345.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.7 | 2.8k",
+      "name": "KIMJALY",
+      "details": "Women's Gentle Yoga T-Shirt",
+      "price": "₹699"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2628497/bcd937a888d718a906f6a3f4d1d2a0d2/p2628497.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.7 | 944",
+      "name": "DOMYOS",
+      "details": "Women Gym Sports T-Shirt - Purple",
+      "price": "₹599"
+    },
+  ];
+  static const List womenFootWearDetailedList = [
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2582482/fa7b8489d6f29cd45904977375552b07/p2582482.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.5 | 7k",
+      "name": "QUECHUA",
+      "details":
+          "Women Water Resistant Mid Ankle Hiking Shoes Blue Grey - NH150",
+      "price": "₹2999"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2583099/d8fb3424b417850482824719809d56bb/p2583099.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.7 | 6.9k",
+      "name": "QUECHUA",
+      "details": "Women Mid Ankle Hiking Shoes Storm Blue - NH100",
+      "price": "₹1799"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2446895/69722b98cbefce4ce7edc9a87d9a952c/p2446895.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.6 | 2.8k",
+      "name": "OLAIAN",
+      "details": "Women Slippers/Flip-Flops 100 Turquoise Black",
+      "price": "₹199"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p1929916/24557873e945a6839ecf2bdbd87444c8/p1929916.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.5 | 20",
+      "name": "PERFLY",
+      "details": "Women Badminton Shoe BS 100 Red",
+      "price": "₹1499"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p1804194/413b626b6cae74ed6c60d67f91ef189f/p1804194.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.3 | 416",
+      "name": "FORCLAZ",
+      "details": "Women Waterproof Leather Trekking Boots MT100 Brown",
+      "price": "₹8999"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2180343/0607697b5591566c6acccf744ba8acc0/p2180343.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.4 | 6.8k",
+      "name": "QUECHUA",
+      "details":
+          "Women Water Resistant Sports Sandals with Velcro Strap Abyss Blue - NH500",
+      "price": "₹1999"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p2066480/e25285817d3374a3aef20fba6b3e6077/p2066480.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.3 | 27",
+      "name": "KIPSTA",
+      "details": "Women's Football Boots Viralto+ I MG - Blue",
+      "price": "₹2999"
+    },
+    {
+      "image":
+          "https://contents.mediadecathlon.com/p1757783/b6ad24a525ab250f7ebdbf46d6d5dec0/p1757783.jpg?format=auto&quality=70&f=425x0",
+      "rating": "4.4 | 504",
+      "name": "QUECHUA",
+      "details": "Women’s Hiking Boots - NH500 Fresh",
+      "price": "₹2999"
+    },
+  ];
+  static List<Widget> listofpages = [
+    MensTopwear(),
+    WomenTopwear(title: "Women Collection"),
+    MensTopwear(),
+    WomenFootwear(title: "Shoes Collection"),
+    MensTopwear(),
+    WomenTopwear(title: "Women Collection"),
+    MensTopwear(),
+    WomenTopwear(title: "Women Collection"),
   ];
 }

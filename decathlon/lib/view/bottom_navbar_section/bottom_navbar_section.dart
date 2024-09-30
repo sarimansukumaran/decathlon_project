@@ -1,6 +1,8 @@
 import 'package:decathlon/utils/constants/color_constants.dart';
+import 'package:decathlon/view/account_screen/account_screen.dart';
 import 'package:decathlon/view/categories/categories.dart';
 import 'package:decathlon/view/home_screen/home_screen.dart';
+import 'package:decathlon/view/notification_screen/notificationScreen.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavbarSection extends StatefulWidget {
@@ -15,14 +17,10 @@ class _BottomNavbarSectionState extends State<BottomNavbarSection> {
     HomeScreen(),
     Categories(),
     Container(
-      color: Colors.pink,
+      color: ColorConstants.MAIN_BLACK,
     ),
-    Container(
-      color: Colors.purple,
-    ),
-    Container(
-      color: Colors.greenAccent,
-    ),
+    NotificationScreen(),
+    AccountScreen()
   ];
   int _currentindex = 0;
   @override
@@ -51,7 +49,15 @@ class _BottomNavbarSectionState extends State<BottomNavbarSection> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.qr_code_scanner_outlined), label: "Scan"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.notifications_none_outlined),
+                icon: IconButton(
+                  icon: Icon(Icons.notifications_none_outlined),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => NotificationScreen()));
+                  },
+                ),
                 label: "Notifications"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.person_2_outlined), label: "Account"),

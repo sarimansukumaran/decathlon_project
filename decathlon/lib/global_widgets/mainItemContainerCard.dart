@@ -1,5 +1,5 @@
 import 'package:decathlon/utils/constants/color_constants.dart';
-import 'package:decathlon/utils/constants/image_constants.dart';
+
 import 'package:flutter/material.dart';
 
 class MainItemContainerCard extends StatelessWidget {
@@ -10,7 +10,7 @@ class MainItemContainerCard extends StatelessWidget {
     required this.itemDetail,
     required this.itemPrice,
     this.haveYellowbox = true,
-    required this.yellowBoxText,
+    this.yellowBoxText,
     super.key,
   });
   String itemimage;
@@ -19,7 +19,7 @@ class MainItemContainerCard extends StatelessWidget {
   String itemDetail;
   String itemPrice;
   final bool haveYellowbox;
-  String yellowBoxText;
+  String? yellowBoxText;
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,7 @@ class MainItemContainerCard extends StatelessWidget {
                             EdgeInsets.symmetric(horizontal: 3, vertical: .5),
                         color: ColorConstants.BASIC_YELLOW,
                         child: Text(
-                          yellowBoxText,
+                          yellowBoxText.toString(),
                           style: TextStyle(fontSize: 9),
                         ),
                       ))
