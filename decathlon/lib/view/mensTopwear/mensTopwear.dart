@@ -1,5 +1,6 @@
 import 'package:decathlon/dummy_db.dart';
 import 'package:decathlon/global_widgets/mainItemContainerCard.dart';
+import 'package:decathlon/global_widgets/stackimageItemCard.dart';
 import 'package:decathlon/utils/constants/color_constants.dart';
 import 'package:flutter/material.dart';
 
@@ -47,21 +48,31 @@ class MensTopwear extends StatelessWidget {
           ],
         ),
         body: SingleChildScrollView(
-          child: GridView.builder(
-              shrinkWrap: true,
-              itemCount: DummyDb.menTopwearDetailedList.length,
-              physics: NeverScrollableScrollPhysics(),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, childAspectRatio: 2 / 3),
-              itemBuilder: (context, index) => MainItemContainerCard(
-                    haveYellowbox: false,
-                    itemimage: DummyDb.menTopwearDetailedList[index]["image"],
-                    itemRating: DummyDb.menTopwearDetailedList[index]["rating"],
-                    itemname: DummyDb.menTopwearDetailedList[index]["name"],
-                    itemDetail: DummyDb.menTopwearDetailedList[index]
-                        ["details"],
-                    itemPrice: DummyDb.menTopwearDetailedList[index]["price"],
-                  )),
+          child: Column(
+            children: [
+              Stackimageitemcard(
+                  firstImage: DummyDb.mainItemContainerList[0]["image"],
+                  secondImage: DummyDb.imageAndTextListTwo[0]["image"]),
+              GridView.builder(
+                  shrinkWrap: true,
+                  itemCount: DummyDb.menTopwearDetailedList.length,
+                  physics: NeverScrollableScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2, childAspectRatio: 2 / 3),
+                  itemBuilder: (context, index) => MainItemContainerCard(
+                        haveYellowbox: false,
+                        itemimage: DummyDb.menTopwearDetailedList[index]
+                            ["image"],
+                        itemRating: DummyDb.menTopwearDetailedList[index]
+                            ["rating"],
+                        itemname: DummyDb.menTopwearDetailedList[index]["name"],
+                        itemDetail: DummyDb.menTopwearDetailedList[index]
+                            ["details"],
+                        itemPrice: DummyDb.menTopwearDetailedList[index]
+                            ["price"],
+                      )),
+            ],
+          ),
         ));
   }
 }

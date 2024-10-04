@@ -894,4 +894,12 @@ class DummyDb {
     MensTopwear(),
     WomenTopwear(title: "Women Collection"),
   ];
+  static List stackimageList = [
+    {
+      "fimage":
+          "https://images.pexels.com/photos/128202/pexels-photo-128202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "simage":
+          "https://images.pexels.com/photos/8346655/pexels-photo-8346655.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+  ];
 }

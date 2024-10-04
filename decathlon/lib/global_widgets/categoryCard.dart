@@ -1,5 +1,6 @@
-import 'package:decathlon/utils/constants/color_constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CategoryCard extends StatelessWidget {
   String cateImage;
@@ -32,7 +33,9 @@ class CategoryCard extends StatelessWidget {
             ),
             Text(
               cateName,
-              style: TextStyle(fontSize: 10, fontWeight: FontWeight.w700),
+              style: GoogleFonts.roboto(
+                textStyle: TextStyle(fontSize: 10, fontWeight: FontWeight.w700),
+              ),
               textAlign: TextAlign.center,
             )
           ],

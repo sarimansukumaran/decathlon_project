@@ -49,15 +49,15 @@ class _BottomNavbarSectionState extends State<BottomNavbarSection> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.qr_code_scanner_outlined), label: "Scan"),
             BottomNavigationBarItem(
-                icon: IconButton(
-                  icon: Icon(Icons.notifications_none_outlined),
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => NotificationScreen()));
-                  },
-                ),
+                // icon: IconButton(
+                icon: Icon(Icons.notifications_none_outlined),
+                // onPressed: () {
+                //   Navigator.push(
+                //       context,
+                //       MaterialPageRoute(
+                //           builder: (context) => NotificationScreen()));
+                // },
+                // ),
                 label: "Notifications"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.person_2_outlined), label: "Account"),
